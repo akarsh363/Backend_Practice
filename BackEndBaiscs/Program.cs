@@ -4,16 +4,15 @@
 	{
 		static void Main(string[] args)
 		{
-			// Input and Output 
-			string name, subject;
-			Console.WriteLine("Enter your Name : ");
-			name = Console.ReadLine();
-			Console.WriteLine("Enter your favourite Subject : ");
-			subject = Console.ReadLine();
-
-			Console.WriteLine($"Hi {name}, your favourite Subject is : {subject}");
-			Console.WriteLine("Hi {0}, your favourite Subject is : {1}",name,subject);
-			Console.WriteLine("Hi " + name + ", your favourite Subject is : " + subject);
+			// Operators 
+			int num1, num2;
+			Console.WriteLine("Enter the First Number : ");
+			num1 = int.Parse(Console.ReadLine());
+			Console.WriteLine("Enter the Second Number : ");
+			num2 = int.Parse(Console.ReadLine());
+			Console.WriteLine("The Sum of the 2 Numbers is : " +  (num1 + num2));
+			Console.WriteLine("The difference of the 2 Numbers is : " + (num1 - num2));
+			Console.WriteLine("The product of the 2 Numbers is : " + (num1 * num2));
 		}
 	}
 }
