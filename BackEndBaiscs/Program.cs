@@ -4,15 +4,22 @@
 	{
 		static void Main(string[] args)
 		{
-			// Operators 
-			int num1, num2;
-			Console.WriteLine("Enter the First Number : ");
-			num1 = int.Parse(Console.ReadLine());
-			Console.WriteLine("Enter the Second Number : ");
-			num2 = int.Parse(Console.ReadLine());
-			Console.WriteLine("The Sum of the 2 Numbers is : " +  (num1 + num2));
-			Console.WriteLine("The difference of the 2 Numbers is : " + (num1 - num2));
-			Console.WriteLine("The product of the 2 Numbers is : " + (num1 * num2));
+			//Conditions
+			int marks;
+			Console.WriteLine("Enter your Marks : ");
+			marks = int.Parse(Console.ReadLine());
+			if ((marks > 100) || (marks < 0))
+			{
+				Console.WriteLine("Invalid Marks, Marks should be in the rage of (0-100)");
+			}
+			else if (marks >= 35)
+			{
+				Console.WriteLine("Pass");
+			}
+			else
+			{
+				Console.WriteLine("Fail");
+			}
 		}
 	}
 }
