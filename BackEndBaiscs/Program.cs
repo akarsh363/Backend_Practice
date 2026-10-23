@@ -4,20 +4,16 @@
 	{
 		static void Main(string[] args)
 		{
-			// DataTypes and Parsing 
-			int marks1, marks2;
-			double average;
+			// Input and Output 
+			string name, subject;
+			Console.WriteLine("Enter your Name : ");
+			name = Console.ReadLine();
+			Console.WriteLine("Enter your favourite Subject : ");
+			subject = Console.ReadLine();
 
-			Console.WriteLine("Enter the Marks of Subject 1 : ");
-			marks1 = int.Parse(Console.ReadLine());
-
-			Console.WriteLine("Enter the Marks of Subject 2 : ");
-			marks2 = int.Parse(Console.ReadLine());
-
-			average = (marks1 + marks2) / 2.0;
-
-			Console.WriteLine("Total Marks is : " + (marks1 + marks2));
-			Console.WriteLine("Average Marks is : " + average);
+			Console.WriteLine($"Hi {name}, your favourite Subject is : {subject}");
+			Console.WriteLine("Hi {0}, your favourite Subject is : {1}",name,subject);
+			Console.WriteLine("Hi " + name + ", your favourite Subject is : " + subject);
 		}
 	}
 }
