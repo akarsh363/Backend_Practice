@@ -4,24 +4,13 @@
 	{
 		static void Main(string[] args)
 		{
-			// Switch 
-			int choice;
-			Console.WriteLine("Enter your choice (1,2 or 3) : ");
-			choice = int.Parse(Console.ReadLine());
-			switch (choice)
+			// Loops 
+			int num;
+			Console.WriteLine("Enter the Number : ");
+			num = int.Parse(Console.ReadLine());
+			for (int i = 1; i <= 10; i++)
 			{
-				case 1:
-					Console.WriteLine("Hello");
-					break;
-				case 2:
-					Console.WriteLine(DateTime.Now.ToString());
-					break;
-				case 3:
-					Console.WriteLine("Exit");
-					break;
-				default:
-					Console.WriteLine("Please Enter a valid input");
-					break;
+				Console.WriteLine(num + " * " + i + " = " + (num * i));
 			}
 		}
 	}
