@@ -4,21 +4,24 @@
 	{
 		static void Main(string[] args)
 		{
-			//Conditions
-			int marks;
-			Console.WriteLine("Enter your Marks : ");
-			marks = int.Parse(Console.ReadLine());
-			if ((marks > 100) || (marks < 0))
+			// Switch 
+			int choice;
+			Console.WriteLine("Enter your choice (1,2 or 3) : ");
+			choice = int.Parse(Console.ReadLine());
+			switch (choice)
 			{
-				Console.WriteLine("Invalid Marks, Marks should be in the rage of (0-100)");
-			}
-			else if (marks >= 35)
-			{
-				Console.WriteLine("Pass");
-			}
-			else
-			{
-				Console.WriteLine("Fail");
+				case 1:
+					Console.WriteLine("Hello");
+					break;
+				case 2:
+					Console.WriteLine(DateTime.Now.ToString());
+					break;
+				case 3:
+					Console.WriteLine("Exit");
+					break;
+				default:
+					Console.WriteLine("Please Enter a valid input");
+					break;
 			}
 		}
 	}
