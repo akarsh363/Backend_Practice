@@ -6,44 +6,45 @@ namespace BackEndBaiscs
 	{
 		static void Main(string[] args)
 		{
-		    // Methods
+			int totalSubjects, marks;
+			int totalMarks = 0;
+			Console.WriteLine("WelCome!, This Program helps you calculate Total Marks, Average Marks, Pass/Fail Status");
+			Console.WriteLine();
+			Console.WriteLine("Enter the Total Number of Subjects : ");
+			Console.WriteLine();
+			totalSubjects = int.Parse(Console.ReadLine());
 
-
-		    // add
-			int a, b;
-			Console.WriteLine("Enter the first Number : ");
-			a = int.Parse(Console.ReadLine());
-			Console.WriteLine("Enter the second Number : ");
-			b = int.Parse(Console.ReadLine());
-			add(a, b);
-
-			// isPass
-			int marks;
-			Console.WriteLine("Enter your marks : ");
-			marks = int.Parse(Console.ReadLine());
-			if (isPass(marks))
+			if ((totalSubjects <= 0) || (totalSubjects > 10))
 			{
-				Console.WriteLine("Pass");
+				Console.WriteLine("Please Enter the total Number of Subjects in the range of (1-10) : ");
+				return;
+			}
+
+			Console.WriteLine();
+			for (int i = 1; i <= totalSubjects; i++)
+			{
+				Console.WriteLine("Enter the Marks of Subject out of 100 :  " + i + " : ");
+				marks = int.Parse(Console.ReadLine());
+				if ((marks < 0) || (marks > 100))
+				{
+					Console.WriteLine("Marks should be between 0 to 100");
+					return;
+				}
+				totalMarks += marks;
+			}
+			double avg = (double)totalMarks / totalSubjects;
+			Console.WriteLine();
+			Console.WriteLine("-------RESULT-------");
+			Console.WriteLine("Total Marks is : " + totalMarks);
+			Console.WriteLine("Average Marks is : " + avg);
+			if (avg >= 35)
+			{
+				Console.WriteLine("Result : Pass");
 			}
 			else
 			{
-				Console.WriteLine("Fail");
+				Console.WriteLine("Result : Fail");
 			}
-		}
-
-		private static bool isPass(int marks)
-		{
-			if (marks >= 35)
-			{
-				return true;
-			}
-			return false;
-		}
-
-		private static void add(int a, int b)
-		{
-			int sum = a + b;
-			Console.WriteLine("The Sum of the 2 numbers is : " + sum);
 		}
 	}
 }
