@@ -6,26 +6,32 @@ namespace BackEndBaiscs
 	{
 		static void Main(string[] args)
 		{
-		    // Arrays... 
-			int totalSubjects, sum = 0; ;
-			Console.WriteLine("Enter the Total Number of Subjects : ");
-			totalSubjects = int.Parse(Console.ReadLine());
+			// String... 
+			string name;
+			Console.WriteLine("Enter your Name : ");
+			name = Console.ReadLine() ?? string.Empty;
 
-			int[] marks = new int[totalSubjects];
+			// ToUpper 
+			Console.WriteLine("Upper Case : " + name.ToUpper());
 
-			Console.WriteLine("Enter Each Subjects Marks : ");
-			for (int i=0; i<marks.Length; i++)
+			// ToLower
+			Console.WriteLine("Lower Case : " + name.ToLower());
+
+			// Contains 
+			if (name.Contains('d'))
 			{
-				marks[i] = int.Parse(Console.ReadLine());
+				Console.WriteLine("Contains d");
+			}
+			else
+			{
+				Console.WriteLine("Does not Contains d");
 			}
 
-			Console.WriteLine("Printing Marks : ");
-			for (int i=0; i< marks.Length; i++) 
-			{
-               Console.WriteLine(marks[i]);
-				sum += marks[i];
-			}
-			Console.WriteLine("Total Sum of marks is : " + sum);
+			// Trim 
+			name = name.Trim();
+
+			// Interpolation 
+			Console.WriteLine($"Your Name is : {name}");
 		}
 	}
 }
