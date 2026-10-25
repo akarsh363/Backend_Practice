@@ -6,26 +6,17 @@ namespace BackEndBaiscs
 	{
 		static void Main(string[] args)
 		{
-		    // Arrays... 
-			int totalSubjects, sum = 0; ;
-			Console.WriteLine("Enter the Total Number of Subjects : ");
-			totalSubjects = int.Parse(Console.ReadLine());
-
-			int[] marks = new int[totalSubjects];
-
-			Console.WriteLine("Enter Each Subjects Marks : ");
-			for (int i=0; i<marks.Length; i++)
+			// Lists ... 
+			List<string> Tasks = ["BreakFast", "Study", "Play", "Exercise", "sleep"];
+			Console.WriteLine("Count : " +  Tasks.Count);
+			Tasks.Remove("Play");
+			Console.WriteLine("Count : " + Tasks.Count);
+			Tasks.Add("Drink");
+			Console.WriteLine("Count : " + Tasks.Count);
+			foreach (var task in Tasks)
 			{
-				marks[i] = int.Parse(Console.ReadLine());
+				Console.WriteLine(task);
 			}
-
-			Console.WriteLine("Printing Marks : ");
-			for (int i=0; i< marks.Length; i++) 
-			{
-               Console.WriteLine(marks[i]);
-				sum += marks[i];
-			}
-			Console.WriteLine("Total Sum of marks is : " + sum);
 		}
 	}
 }
