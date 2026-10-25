@@ -6,17 +6,32 @@ namespace BackEndBaiscs
 	{
 		static void Main(string[] args)
 		{
-			// Lists ... 
-			List<string> Tasks = ["BreakFast", "Study", "Play", "Exercise", "sleep"];
-			Console.WriteLine("Count : " +  Tasks.Count);
-			Tasks.Remove("Play");
-			Console.WriteLine("Count : " + Tasks.Count);
-			Tasks.Add("Drink");
-			Console.WriteLine("Count : " + Tasks.Count);
-			foreach (var task in Tasks)
+			// String... 
+			string name;
+			Console.WriteLine("Enter your Name : ");
+			name = Console.ReadLine() ?? string.Empty;
+
+			// ToUpper 
+			Console.WriteLine("Upper Case : " + name.ToUpper());
+
+			// ToLower
+			Console.WriteLine("Lower Case : " + name.ToLower());
+
+			// Contains 
+			if (name.Contains('d'))
 			{
-				Console.WriteLine(task);
+				Console.WriteLine("Contains d");
 			}
+			else
+			{
+				Console.WriteLine("Does not Contains d");
+			}
+
+			// Trim 
+			name = name.Trim();
+
+			// Interpolation 
+			Console.WriteLine($"Your Name is : {name}");
 		}
 	}
 }
