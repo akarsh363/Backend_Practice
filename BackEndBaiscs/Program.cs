@@ -6,24 +6,22 @@ namespace BackEndBaiscs
 	{
 		static void Main(string[] args)
 		{
-			Student s1 = new Student();
-			s1.Name = "Akarsh";
-			s1.Age = 24;
+			Student s1 = new Student("Akarsh",24,01);
 
-			Student s2 = new Student();
-			s2.Name = "Adarsh";
-			s2.Age = 25;
+			Student s2 = new Student("Adarsh",25,02);
 
 			// Printing ... 
 			Console.WriteLine("Student 1 Details");
 			Console.WriteLine("Name : " +  s1.Name);
 			Console.WriteLine("Age : " + s1.Age);
+			Console.WriteLine("Id : " + s1.ID);
 
 			Console.WriteLine();
 
 			Console.WriteLine("Student 2 Details");
 			Console.WriteLine("Name : " + s2.Name);
 			Console.WriteLine("Age : " + s2.Age);
+			Console.WriteLine("Id : " + s2.ID);
 		}
 	}
 }
