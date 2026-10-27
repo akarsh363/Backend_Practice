@@ -6,32 +6,24 @@ namespace BackEndBaiscs
 	{
 		static void Main(string[] args)
 		{
-			// String... 
-			string name;
-			Console.WriteLine("Enter your Name : ");
-			name = Console.ReadLine() ?? string.Empty;
+			Student s1 = new Student();
+			s1.Name = "Akarsh";
+			s1.Age = 24;
 
-			// ToUpper 
-			Console.WriteLine("Upper Case : " + name.ToUpper());
+			Student s2 = new Student();
+			s2.Name = "Adarsh";
+			s2.Age = 25;
 
-			// ToLower
-			Console.WriteLine("Lower Case : " + name.ToLower());
+			// Printing ... 
+			Console.WriteLine("Student 1 Details");
+			Console.WriteLine("Name : " +  s1.Name);
+			Console.WriteLine("Age : " + s1.Age);
 
-			// Contains 
-			if (name.Contains('d'))
-			{
-				Console.WriteLine("Contains d");
-			}
-			else
-			{
-				Console.WriteLine("Does not Contains d");
-			}
+			Console.WriteLine();
 
-			// Trim 
-			name = name.Trim();
-
-			// Interpolation 
-			Console.WriteLine($"Your Name is : {name}");
+			Console.WriteLine("Student 2 Details");
+			Console.WriteLine("Name : " + s2.Name);
+			Console.WriteLine("Age : " + s2.Age);
 		}
 	}
 }
