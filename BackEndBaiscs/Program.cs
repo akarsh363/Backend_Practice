@@ -6,22 +6,30 @@ namespace BackEndBaiscs
 	{
 		static void Main(string[] args)
 		{
-			Student s1 = new Student("Akarsh",24,01);
+			Console.WriteLine("Welcome to the Number Checker!");
 
-			Student s2 = new Student("Adarsh",25,02);
+			// Try Parse ...
+			Console.WriteLine("Enter the Number : ");
+			string input = Console.ReadLine();
+			if (int.TryParse(input, out int result))
+			{
+				Console.WriteLine("Input is : " + input);
+			}
+			else
+			{
+				Console.WriteLine("Invalid Input!");
+			}
 
-			// Printing ... 
-			Console.WriteLine("Student 1 Details");
-			Console.WriteLine("Name : " +  s1.Name);
-			Console.WriteLine("Age : " + s1.Age);
-			Console.WriteLine("Id : " + s1.ID);
-
-			Console.WriteLine();
-
-			Console.WriteLine("Student 2 Details");
-			Console.WriteLine("Name : " + s2.Name);
-			Console.WriteLine("Age : " + s2.Age);
-			Console.WriteLine("Id : " + s2.ID);
+			// Try Catch 
+			try
+			{
+				int ip = int.Parse(Console.ReadLine());
+				Console.WriteLine("Input is : " + ip);
+			}
+			catch (FormatException ex)
+			{
+				Console.WriteLine(ex.Message);
+			}
 		}
 	}
 }
