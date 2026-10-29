@@ -1,3 +1,4 @@
 <Solution>
   <Project Path="BackEndBaiscs/BackEndBaiscs.csproj" />
+  <Project Path="TaskManager/TaskManager.csproj" Id="113bb92e-62c4-4f04-ac64-5402eadd4e2f" />
 </Solution>
