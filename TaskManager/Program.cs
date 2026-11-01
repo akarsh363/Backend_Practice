@@ -35,6 +35,11 @@ namespace TaskManager
 
 			app.MapControllers();
 
+			app.MapGet("/Welcome", () =>
+			{
+				return "Hello! Welcome to C# Programming.";
+			});
+
 			app.Run();
 		}
 	}
