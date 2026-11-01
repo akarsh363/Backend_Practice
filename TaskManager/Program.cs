@@ -46,6 +46,7 @@ namespace TaskManager
 
 			app.MapControllers();
 
+			// Get 1 Student by Id... 
 			app.MapGet("/students/{id}", (int id) =>
 			{
 			    foreach(var item in students)
@@ -56,6 +57,54 @@ namespace TaskManager
 					}
 				}
 				return Results.NotFound("No Student Found with this ID " + id);
+			});
+
+			// Get All Students...
+			app.MapGet("/students", () =>
+			{
+			    if (students.Count == 0)
+				{
+					return Results.NotFound("No Students are present");
+				}
+				return Results.Ok(students);
+			});
+
+
+			// Add a Student (POST)...
+			app.MapPost("/students", (Student request) =>
+			{
+			     students.Add(request);
+				 return Results.Ok("Student Added Successfully!");
+			});
+
+			// Delete a Student (DELETE)...
+			app.MapDelete("/students/{id}", (int id) =>
+			{
+				var stu = students.FirstOrDefault(s => s.Id == id);
+
+				if(stu == null)
+				{
+					return Results.NotFound("No Student found with this ID : " + id);
+				}
+
+				students.Remove(stu);
+				return Results.Ok("Student Deleted Successfully!");
+			});
+
+			// Update a Student...
+			app.MapPut("/students/{id}", (int id, Student stud) =>
+			{
+			    var stu = students.FirstOrDefault((s) => s.Id == id);
+
+				if (stu == null)
+				{
+					return Results.NotFound("No Student found with this Id : " + id);
+				}
+
+				stu.Id = id;
+				stu.Age = stud.Age;
+				stu.Name = stud.Name;
+				return Results.Ok("Updated Student Successfully!");
 			});
 
 			app.Run();
