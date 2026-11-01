@@ -5,6 +5,17 @@ namespace TaskManager
 	{
 		public static void Main(string[] args)
 		{
+		    Student s1 = new Student(1,"Rahul",21);
+
+			Student s2 = new Student(2, "Priya", 22);
+
+			Student s3 = new Student(3, "Amit", 20);
+
+			List<Student> students = new List<Student>();
+			students.Add(s1);
+			students.Add(s2);
+			students.Add(s3);
+
 			var builder = WebApplication.CreateBuilder(args);
 
 			// Add services to the container.
@@ -35,9 +46,16 @@ namespace TaskManager
 
 			app.MapControllers();
 
-			app.MapGet("/Welcome", () =>
+			app.MapGet("/students/{id}", (int id) =>
 			{
-				return "Hello! Welcome to C# Programming.";
+			    foreach(var item in students)
+				{
+	                if (item.Id == id)
+					{
+	                   return Results.Ok(item);
+					}
+				}
+				return Results.NotFound("No Student Found with this ID " + id);
 			});
 
 			app.Run();
