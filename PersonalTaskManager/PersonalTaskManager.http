@@ -1,6 +1,0 @@
-@PersonalTaskManager_HostAddress = http://localhost:5194
-
-GET {{PersonalTaskManager_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
