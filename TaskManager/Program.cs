@@ -1,3 +1,5 @@
+using Microsoft.EntityFrameworkCore;
+using TaskManager.Data;
 
 namespace TaskManager
 {
@@ -5,7 +7,7 @@ namespace TaskManager
 	{
 		public static void Main(string[] args)
 		{
-		    Student s1 = new Student(1,"Rahul",21);
+			Student s1 = new Student(1, "Rahul", 21);
 
 			Student s2 = new Student(2, "Priya", 22);
 
@@ -28,6 +30,10 @@ namespace TaskManager
 			builder.Services.AddEndpointsApiExplorer();
 			builder.Services.AddSwaggerGen();
 
+			var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
+			builder.Services.AddDbContext<TaskDBContext>(options => options.UseSqlServer(connectionString));
+
 			var app = builder.Build();
 
 			// Configure the HTTP request pipeline.
@@ -49,11 +55,11 @@ namespace TaskManager
 			// Get 1 Student by Id... 
 			app.MapGet("/students/{id}", (int id) =>
 			{
-			    foreach(var item in students)
+				foreach (var item in students)
 				{
-	                if (item.Id == id)
+					if (item.Id == id)
 					{
-	                   return Results.Ok(item);
+						return Results.Ok(item);
 					}
 				}
 				return Results.NotFound("No Student Found with this ID " + id);
@@ -62,7 +68,7 @@ namespace TaskManager
 			// Get All Students...
 			app.MapGet("/students", () =>
 			{
-			    if (students.Count == 0)
+				if (students.Count == 0)
 				{
 					return Results.NotFound("No Students are present");
 				}
@@ -73,8 +79,8 @@ namespace TaskManager
 			// Add a Student (POST)...
 			app.MapPost("/students", (Student request) =>
 			{
-			     students.Add(request);
-				 return Results.Ok("Student Added Successfully!");
+				students.Add(request);
+				return Results.Ok("Student Added Successfully!");
 			});
 
 			// Delete a Student (DELETE)...
@@ -82,7 +88,7 @@ namespace TaskManager
 			{
 				var stu = students.FirstOrDefault(s => s.Id == id);
 
-				if(stu == null)
+				if (stu == null)
 				{
 					return Results.NotFound("No Student found with this ID : " + id);
 				}
@@ -94,7 +100,7 @@ namespace TaskManager
 			// Update a Student...
 			app.MapPut("/students/{id}", (int id, Student stud) =>
 			{
-			    var stu = students.FirstOrDefault((s) => s.Id == id);
+				var stu = students.FirstOrDefault((s) => s.Id == id);
 
 				if (stu == null)
 				{
