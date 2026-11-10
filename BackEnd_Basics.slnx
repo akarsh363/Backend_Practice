@@ -1,5 +1,1 @@
-<Solution>
-  <Project Path="BackEndBaiscs/BackEndBaiscs.csproj" />
-  <Project Path="PersonalTaskManager/PersonalTaskManager.csproj" Id="b2d44dec-1959-4aa2-9623-f1c9fa58b4e2" />
-  <Project Path="TaskManager/TaskManager.csproj" Id="113bb92e-62c4-4f04-ac64-5402eadd4e2f" />
-</Solution>
+<Solution />
