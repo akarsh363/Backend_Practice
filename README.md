@@ -11,3 +11,8 @@
    Microsoft.EntityFrameworkCore.SqlServer
    Microsoft.EntityFrameworkCore.Tools
    Microsoft.EntityFrameworkCore.Design
+
+2) Tested Postman and Swagger
+* Create a welcomeController file inside the Controllers folder
+* Add [HTTPGET] Method 
+* Verified the welcome message in Postman and Swagger
